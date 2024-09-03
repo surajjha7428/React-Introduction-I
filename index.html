@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>JSX and Babel</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+        // React component to display a heading, paragraph, and button
+        function App() {
+            // Inline style object for styling the components
+            const styles = {
+                container: {
+                    textAlign: 'center',
+                    marginTop: '50px',
+                },
+                heading: {
+                    color: 'blue',
+                    fontSize: '24px',
+                },
+                paragraph: {
+                    color: 'black',
+                    fontSize: '18px',
+                },
+                button: {
+                    padding: '10px 20px',
+                    fontSize: '16px',
+                    backgroundColor: 'green',
+                    color: 'white',
+                    border: 'none',
+                    borderRadius: '5px',
+                    cursor: 'pointer',
+                },
+            };
+
+            // Function to handle button click
+            const handleClick = () => {
+                alert('Button clicked!');
+            };
+
+            // JSX layout wrapped in a React Fragment
+            return (
+                <React.Fragment>
+                    <div style={styles.container}>
+                        <h1 style={styles.heading}>Welcome to React Introduction</h1>
+                        <p style={styles.paragraph}>
+                            This is a simple example demonstrating React Fragments, JSX syntax, and event handling.
+                        </p>
+                        <button style={styles.button} onClick={handleClick}>
+                            Click Me
+                        </button>
+                    </div>
+                </React.Fragment>
+            );
+        }
+
+        // Render the App component into the root div
+        ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+</body>
+
+</html>
